@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  mongodb2:
+    image: mongo:4
+    restart: always
+    ports:
+      - 27030:27017
+    volumes:
+      - data:/data/db
+    
+volumes:
+  data:
