@@ -2,7 +2,7 @@ const express = require('express')
 const helmet = require('helmet')
 const config = require('./config')
 
-const { ProjectRoutes } = require('./api-routes')
+const { ProjectRoutes, UserRoutes } = require('./api-routes')
 const loaders = require('./loaders')
 
 config()
@@ -16,4 +16,6 @@ app.use(helmet())
 app.listen(process.env.APP_PORT, () => {
     console.log('Sunucu ayağa kalktı Ports:  ' + process.env.APP_PORT);
     app.use('/projects', ProjectRoutes)
+    app.use('/users', UserRoutes)
+
 }) 

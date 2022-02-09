@@ -2,6 +2,7 @@ const Project = require('../models/Projects')
 
 
 //model üzerinden kayıt işlemi gerçekleştirmek için bir ara kattır
+//model üzerinden b,ir işlem alır yani sadec mongo işlemleri burada yapılır
 const insert = (projectData) => {
 
 
