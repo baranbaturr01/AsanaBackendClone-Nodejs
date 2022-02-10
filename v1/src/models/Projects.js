@@ -3,12 +3,12 @@ const logger = require('../scripts/logger/Projects')
 
 const ProjectSchema = new mongoose.Schema({
 
-    name: String
+    name: String,
 
-    /*user_id: {
-        type: mongoose.Mongoose.Types.ObjectId,
+    user_id: {
+        type: mongoose.Types.ObjectId,
         ref: 'user'
-    }*/
+    },
 
 }, { timestamps: true, versionKey: false })
 
@@ -21,7 +21,7 @@ ProjectSchema.pre("save", (next, doc) => {
 ProjectSchema.post("save", (doc) => {
     logger.log({
         level: 'info',
-        message: doc    
+        message: doc
 
     })
     //kayıt Edilmiştir Loglama..

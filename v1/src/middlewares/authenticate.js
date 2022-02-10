@@ -4,7 +4,6 @@ const JWT = require("jsonwebtoken")
 const authenticateToken = (req, res, next) => {
 
 
-    const authHeader = req.headers["authorization"]
     const token = req.headers?.authorization?.split(" ")[1] || null
 
     if (token === null) {
@@ -16,7 +15,7 @@ const authenticateToken = (req, res, next) => {
         if (err) {
             return res.status(httpStatus.FORBIDDEN).send({ error: "Token is expired" })
         }
-        req.user = user
+        req.user = user.user
 
         next()
 
